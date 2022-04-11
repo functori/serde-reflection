@@ -5,6 +5,7 @@ let max_depth : int option = None
 let char _ = failwith "char serialization not implememted"
 let length _ = failwith "length serialization not implemented"
 let variant_index _ = failwith "variant_index serialization not implemented"
+let float32 _ = failwith "float32 serialization not implemented"
 let float64 _ = failwith "float64 serialization not implemented"
 
 let variable f l = variable length f l

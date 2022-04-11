@@ -89,12 +89,11 @@ let variable length f b =
       aux b (x :: acc) (i-1) in
   aux b [] n
 
-let decode s =
+let is_utf8_string s =
   let decoder = Uutf.decoder ~encoding:`UTF_8 (`String s) in
   let rec aux decoder =
     match Uutf.decode decoder with
-    | `Uchar c when c <> Uchar.of_int 0 -> aux decoder
-    | `Uchar _ -> false
+    | `Uchar _ -> aux decoder
     | `End -> true
     | `Malformed _ -> false
     | `Await -> false in
@@ -105,7 +104,7 @@ let string length b =
   let r = Bytes.sub b.buffer b.offset n in
   b.offset <- b.offset + n;
   let s = Bytes.to_string r in
-  if decode s then s else failwith "non utf8 string"
+  if is_utf8_string s then s else failwith "non utf8 string"
 
 let bytes length b =
   let n = length b in

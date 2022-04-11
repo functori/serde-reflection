@@ -3,6 +3,7 @@ include Common.Deserialize
 let max_u32 = 1 lsl 32 - 1
 
 let char _ = failwith "char deserialization not implemented"
+let float32 _ = failwith "float32 deserialization not implemented"
 let float64 _ = failwith "float64 deserialization not implemented"
 
 let uleb128_32 b =

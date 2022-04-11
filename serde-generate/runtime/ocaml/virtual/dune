@@ -2,4 +2,4 @@
  (name runtime)
  (virtual_modules serialize deserialize runtime)
  (libraries common)
- (default_implementation bcs_runtime))
+ (default_implementation serde_runtime))

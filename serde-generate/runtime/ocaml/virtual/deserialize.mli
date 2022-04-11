@@ -20,6 +20,7 @@ val fixed : (b -> 'a) -> int -> b -> 'a list
 val char : b -> char
 val length : b -> int
 val variant_index : b -> int
+val float32 : b -> float
 val float64 : b -> float
 val variable : (b -> 'a) -> b -> 'a list
 val string : b -> string

@@ -8,6 +8,9 @@ let length i =
   if i > max_length then failwith "integer above max length"
   else uint64 @@ Stdint.Uint64.of_int i
 let variant_index i = uint32 @@ Stdint.Uint32.of_int i
+let float32 f =
+  let i = Stdlib.Int32.bits_of_float f in
+  int32 i
 let float64 f =
   let i = Stdlib.Int64.bits_of_float f in
   int64 i

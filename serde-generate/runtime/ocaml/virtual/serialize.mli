@@ -21,6 +21,7 @@ val fixed : ('a -> bytes) -> 'a list -> bytes
 val char : char -> bytes
 val length : int -> bytes
 val variant_index : int -> bytes
+val float32 : float -> bytes
 val float64 : float -> bytes
 val variable : ('a -> bytes) -> 'a list -> bytes
 val string : string -> bytes

@@ -1,7 +1,7 @@
 open Ppxlib
 open Ast_builder.Default
 
-let depth_table : (string, int) Hashtbl.t = Hashtbl.create 512
+let depth_table : (string, int) Hashtbl.t = Hashtbl.create 509
 let current_name = ref ""
 
 type expr = {
@@ -59,6 +59,7 @@ and base ~loc ~names ~id args = match id, args with
   | "bool", [] | "Bool.t", [] -> ret ~loc "bool"
   | "string", [] | "String.t", [] -> ret ~loc "string"
   | "bytes", [] | "Bytes.t", [] -> ret ~loc "bytes"
+  | "float", [] | "Float.t", [] -> ret ~loc "float64"
   | "char", [] | "Char.t", [] -> ret ~loc "char"
   | "unit", [] -> ret ~loc "unit"
   | "uint8", [] | "Stdint.uint8", [] | "Stdint.Uint8.t", [] -> ret ~loc "uint8"

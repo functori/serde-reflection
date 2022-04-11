@@ -14,6 +14,10 @@ let length b =
 
 let variant_index b = Stdint.Uint32.to_int @@ uint32 b
 
+let float32 b =
+  let i = int32 b in
+  Stdlib.Int32.float_of_bits i
+
 let float64 b =
   let i = int64 b in
   Stdlib.Int64.float_of_bits i
